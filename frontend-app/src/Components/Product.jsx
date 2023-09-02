@@ -6,10 +6,15 @@ function ProductPage() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCart(storedCart);
+  }, []);
+  useEffect(() => {
     fetch('http://localhost:5000/product')
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error('Error fetching data:', error));
+     
   }, []);
 
   // Function to add a product to the cart
@@ -24,7 +29,10 @@ function ProductPage() {
       // If the product is not in the cart, add it with a quantity of 1
       updatedCart.push({ ...product, quantity: 1 });
     }
-console.log("updatedCart",updatedCart)
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    // Send a PATCH request to update the product quantity on the server
+    updateProductQuantity(product.id, existingProduct ? existingProduct.quantity : 1);
+// console.log("updatedCart",updatedCart)
     setCart(updatedCart);
   };
 
@@ -34,17 +42,39 @@ console.log("updatedCart",updatedCart)
       const updatedCart = cart.map((item) =>
         item.id === productId ? { ...item, quantity: newQuantity } : item
       );
-
-      // If the user sets the quantity to 0, remove the product from the cart
       if (newQuantity === 0) {
         const productIndex = updatedCart.findIndex((item) => item.id === productId);
         if (productIndex !== -1) {
           updatedCart.splice(productIndex, 1);
         }
       }
+      // Send a PATCH request to update the product quantity on the server
 
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+      updateProductQuantity(productId, newQuantity);
+      console.log("updatedCart2",updatedCart)
+     
       setCart(updatedCart);
     }
+    
+  };
+
+  // Function to send a PATCH request to update the product quantity on the server
+  const updateProductQuantity = (productId, newQuantity) => {
+    fetch(`http://localhost:5000/product/${productId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ quantity: newQuantity }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        // Handle the successful response, if needed
+      })
+      .catch((error) => console.error('Error updating product quantity:', error));
   };
 
   return (
@@ -82,7 +112,7 @@ console.log("updatedCart",updatedCart)
                 </button>
               </div>
             ) : (
-              <button onClick={() => addToCart(product)}>Add to cart</button>
+              <button className="buttonadd"onClick={() => addToCart(product) }>Add to cart</button>
             )}
           </div>
         ))}

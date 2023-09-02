@@ -70,6 +70,16 @@
     margin: 0 5px;
   }
 
+  .buttonadd{
+    width:200px;
+    height: 35px;
+    background-color: #24AEB1;
+    color:white;
+    font-size: 20px;
+    border-radius: 15px;
+    border:#24AEB1
+  }
+
   /* Media queries for responsive design */
 @media (max-width: 768px) {
     .product-list {

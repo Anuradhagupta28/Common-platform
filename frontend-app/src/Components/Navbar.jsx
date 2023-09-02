@@ -31,7 +31,7 @@ function Navbar() {
             </Link>
    
         
-          <Link to="/user"> 
+          <Link > 
           <li><img src={user} className='image'></img></li>
             <li>User</li></Link>
        
