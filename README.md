@@ -4,7 +4,7 @@ Natural Beauty Shopping App
 
 # React E-commerce Project with Routing
 
-This is a React project that implements a simple e-commerce application with two routes: Catalogue page and Cart/Basket page. Users can view products, add them to the cart, adjust quantities, and proceed to checkout.
+This is a React project that implements a simple e-commerce application with two routes: Product page and Cart page. Users can view products, add them to the cart, adjust quantities, and proceed to checkout.
 
 ## Table of Contents
 
