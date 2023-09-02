@@ -2,46 +2,54 @@
 **Project Name:** 
 Natural Beauty Shopping App
 
-**Description**
-This is an online shopping web application with two main routes: Product Page and Cart Page. Users can view a list of products from a JSON file, add them to their cart, and manage quantities. The project aims to provide a responsive user interface for an interactive shopping experience.
+# React E-commerce Project with Routing
 
-**Features**
-Display a list of products fetched from a JSON file.
-Add products to the cart with a quantity control button.
-Increase or decrease the quantity of products in the cart.
-Remove products from the cart.
-Show a cart icon for easy navigation to the cart page.
-Display the list of added products in the cart page.
-Calculate the order total and estimate delivery date.
-Handle cases where no products are added to the cart.
+This is a React project that implements a simple e-commerce application with two routes: Catalogue page and Cart/Basket page. Users can view products, add them to the cart, adjust quantities, and proceed to checkout.
 
-**Technologies** 
-HTML5
-CSS3 (for responsive design)
-JavaScript
-JSON for storing product data
-React
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Folder Structure](#folder-structure)
+- [Usage](#usage)
+- [Bonus Features](#bonus-features)
+- [Demo](#demo)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- Display a list of products from a JSON file (located in the assets folder) on the Catalogue page.
+- Each product card includes product name, image, weight, and price.
+- Add products to the cart with an "Add to cart" button.
+- Adjust product quantities in the cart using the quantity control buttons (-) 1 (+).
+- Remove products from the cart.
+- Responsive user interface.
+- Cart icon in the catalogue page for easy access to the cart.
+- Cart page displays added products, quantity, price, order total, and estimated delivery date.
+- Checkout/confirm order button for order summary display.
+
+## Technologies
+- HTML5
+- CSS3 (for responsive design)
+- JavaScript
+- JSON for storing product data
+- React
+
+## Getting Started
+
+Follow these steps to run the project locally:
+
 
 **Installation**
 Clone the repository to your local machine:
 Copy code
-git clone <repository-url>
+git clone https://github.com/Anuradhagupta28/Common-platform.git
 Open the project folder
 use this command for start db.json file json-server --watch db.json --port 500
 
-
-
-**Usage**
-Visit the Catalogue Page to browse and add products to your cart.
-Click the "Add to Cart" button to add a product.
-Use the quantity control buttons (+) and (-) to adjust product quantities in the cart.
-Click the cart icon to navigate to the Cart Page.
-In the Cart Page, review your added products and place your order.
-
-
-**Deployment Link**
+## Deployment Link
 Project deployment link:common-platform-eight.vercel.app
-
 
 
 
