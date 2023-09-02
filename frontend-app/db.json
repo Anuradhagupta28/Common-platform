@@ -14,7 +14,7 @@
       "Image": "https://www.netmeds.com/images/cms/wysiwyg/brand/v2/msite/garnier.jpg",
       "Weight": "300g",
       "Price": 15.99,
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "Image": "https://www.netmeds.com/images/cms/wysiwyg/brand/v2/msite/myglamm.jpg",
       "Weight": "200g",
       "Price": 10.99,
-      "quantity": 0
+      "quantity": 4
     },
     {
       "id": 4,
@@ -52,7 +52,8 @@
       "Name": "Plum",
       "Image": "https://www.netmeds.com/images/cms/wysiwyg/brand/v2/msite/plum.jpg",
       "Weight": "200g",
-      "Price": 10.99
+      "Price": 10.99,
+      "quantity": 0
     },
     {
       "id": 8,
@@ -73,7 +74,8 @@
       "Name": "Nail Care",
       "Image": "https://www.netmeds.com/images/category/v1/3476/thumb/nail_care_0.jpg",
       "Weight": "300g",
-      "Price": 15.99
+      "Price": 15.99,
+      "quantity": 0
     },
     {
       "id": 11,

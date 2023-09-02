@@ -79,7 +79,15 @@ function ProductPage() {
 
   return (
     <div className="product-page">
-      <h1>Skin Care Essentials</h1>
+         <div >
+      <h2>In the spotlight</h2>
+      <img
+        id="imagefirst"
+        src="https://www.netmeds.com/images/cms/section/images/1636378057_Maybelline_In-the-spotlight_1680x320_Makeup.jpg"
+        alt="image2"
+      />
+    </div>
+      <h2>Skin Care Essentials</h2>
       <div className="product-list">
         {products.map((product) => (
           <div className="product-card" key={product.id}>
