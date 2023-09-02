@@ -10,7 +10,7 @@ function ProductPage() {
     setCart(storedCart);
   }, []);
   useEffect(() => {
-    fetch('http://localhost:5000/product')
+    fetch('https://natural-beauty-json2.onrender.com/product')
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error('Error fetching data:', error));
@@ -61,7 +61,7 @@ function ProductPage() {
 
   // Function to send a PATCH request to update the product quantity on the server
   const updateProductQuantity = (productId, newQuantity) => {
-    fetch(`http://localhost:5000/product/${productId}`, {
+    fetch(`https://natural-beauty-json2.onrender.com/product/${productId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
