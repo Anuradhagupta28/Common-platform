@@ -1,0 +1,94 @@
+import "./Product.css";
+import React, { useEffect, useState } from 'react';
+
+function ProductPage() {
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/product')
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((error) => console.error('Error fetching data:', error));
+  }, []);
+
+  // Function to add a product to the cart
+  const addToCart = (product) => {
+    const updatedCart = [...cart];
+    const existingProduct = updatedCart.find((item) => item.id === product.id);
+
+    if (existingProduct) {
+      // If the product is already in the cart, increase its quantity
+      existingProduct.quantity += 1;
+    } else {
+      // If the product is not in the cart, add it with a quantity of 1
+      updatedCart.push({ ...product, quantity: 1 });
+    }
+console.log("updatedCart",updatedCart)
+    setCart(updatedCart);
+  };
+
+  // Function to update the quantity of a product in the cart
+  const updateQuantity = (productId, newQuantity) => {
+    if (newQuantity >= 0) {
+      const updatedCart = cart.map((item) =>
+        item.id === productId ? { ...item, quantity: newQuantity } : item
+      );
+
+      // If the user sets the quantity to 0, remove the product from the cart
+      if (newQuantity === 0) {
+        const productIndex = updatedCart.findIndex((item) => item.id === productId);
+        if (productIndex !== -1) {
+          updatedCart.splice(productIndex, 1);
+        }
+      }
+
+      setCart(updatedCart);
+    }
+  };
+
+  return (
+    <div className="product-page">
+      <h1>Skin Care Essentials</h1>
+      <div className="product-list">
+        {products.map((product) => (
+          <div className="product-card" key={product.id}>
+            <img src={product.Image} alt={product.Name} />
+            <h2>{product.Name}</h2>
+            <p>Weight: {product.Weight}</p>
+            <p>Price: ${product.Price}</p>
+            {cart.some((item) => item.id === product.id) ? (
+              <div className="cart-controls">
+                <button
+                  onClick={() =>
+                    updateQuantity(
+                      product.id,
+                      cart.find((item) => item.id === product.id).quantity - 1
+                    )
+                  }
+                >
+                  -
+                </button>
+                <span>{cart.find((item) => item.id === product.id).quantity}</span>
+                <button
+                  onClick={() =>
+                    updateQuantity(
+                      product.id,
+                      cart.find((item) => item.id === product.id).quantity + 1
+                    )
+                  }
+                >
+                  +
+                </button>
+              </div>
+            ) : (
+              <button onClick={() => addToCart(product)}>Add to cart</button>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default ProductPage;
