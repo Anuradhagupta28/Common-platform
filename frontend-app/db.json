@@ -6,7 +6,7 @@
       "Image": "//www.netmeds.com/images/cms/wysiwyg/brand/v2/msite/maybelline.jpg",
       "Weight": "200g",
       "Price": 10.99,
-      "quantity": 0
+      "quantity": 4
     },
     {
       "id": 2,
@@ -22,7 +22,7 @@
       "Image": "https://www.netmeds.com/images/cms/wysiwyg/brand/v2/msite/myglamm.jpg",
       "Weight": "200g",
       "Price": 10.99,
-      "quantity": 4
+      "quantity": 1
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "Image": "https://www.netmeds.com/images/category/v1/525/thumb/body_care_200.jpg",
       "Weight": "300g",
       "Price": 15.99,
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": 5,
@@ -45,7 +45,8 @@
       "Name": "colorbar",
       "Image": "https://www.netmeds.com/images/cms/wysiwyg/brand/v2/msite/colorbar.jpg",
       "Weight": "300g",
-      "Price": 15.99
+      "Price": 15.99,
+      "quantity": 1
     },
     {
       "id": 7,
@@ -53,7 +54,7 @@
       "Image": "https://www.netmeds.com/images/cms/wysiwyg/brand/v2/msite/plum.jpg",
       "Weight": "200g",
       "Price": 10.99,
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": 8,
