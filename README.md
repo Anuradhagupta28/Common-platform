@@ -1,5 +1,6 @@
 # Common-platform
-**Project Name:** Natural Beauty Shopping App
+**Project Name:** 
+Natural Beauty Shopping App
 
 **Description**
 This is an online shopping web application with two main routes: Catalogue Page and Cart/Basket Page. Users can view a list of products from a JSON file, add them to their cart, and manage quantities. The project aims to provide a responsive user interface for an interactive shopping experience.
