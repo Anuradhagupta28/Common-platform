@@ -83,14 +83,16 @@
       "Name": "hair_care",
       "Image": "https://www.netmeds.com/images/category/v1/547/thumb/hair_care_200.jpg",
       "Weight": "200g",
-      "Price": 10.99
+      "Price": 10.99,
+      "quantity": 1
     },
     {
       "id": 12,
       "Name": "skin_care",
       "Image": "https://www.netmeds.com/images/category/v1/3784/thumb/skin_care_200.jpg",
       "Weight": "300g",
-      "Price": 15.99
+      "Price": 15.99,
+      "quantity": 1
     },
     {
       "id": 13,
