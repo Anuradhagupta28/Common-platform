@@ -19,7 +19,7 @@ function CartPage() {
     <div className="cart-page">
       {/* <h1>Your Cart</h1> */}
       {cart.length === 0 ? (
-        <p>No products added to the cart.</p>
+        <h3 className='p1'>No products added to the cart.</h3>
       ) : (
         <div className="cart-list">
           {cart.map((item) => (
