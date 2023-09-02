@@ -49,7 +49,7 @@ Open the project folder
 use this command for start db.json file json-server --watch db.json --port 500
 
 ## Deployment Link
-Project deployment link:common-platform-eight.vercel.app
+Project deployment link: common-platform-eight.vercel.app
 
 
 
